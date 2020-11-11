@@ -41,9 +41,9 @@ func main() {
 
 		name := os.Getenv("COMPONENT_NAME")
 
-		message := fmt.Sprintf("Hello from %s.\n", name)
+		message := fmt.Sprintf("%s: Hello from %s.\n", name, name)
 		if target != "" && targetText != "" {
-			message = message + fmt.Sprintf("Received message from %s:\n\t`%s`\n", target, targetText)
+			message = message + fmt.Sprintf(`%s: Received message from %s: "%s"`, name, target, targetText)
 		}
 
 		w.Header().Set("Content-Type", "text/plain; charset=utf-8")
