@@ -24,7 +24,8 @@ func main() {
 		fmt.Println(target)
 
 		if target != "" {
-			targetAddr := fmt.Sprintf("http://%s/", target)
+			targetAddr := fmt.Sprintf("http://%s:3000/multi", target)
+
 			resp, err := http.Get(targetAddr)
 			if err != nil {
 				http.Error(w, "error talking to "+target+""+err.Error(), http.StatusBadGateway)
