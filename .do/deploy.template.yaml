@@ -1,40 +1,40 @@
-name: sample-golang-multi
-
-services:
-- name: edge
-  environment_slug: go
-  github:
-    repo_clone_url: https://github.com/bojand/sample-golang-multi.git
-    branch: main
-  envs:
-  - key: TARGET_COMPONENT
-    value: "intsvc0"
-    scope: RUN_TIME
-  - key: COMPONENT_NAME
-    value: ${_self.PRIVATE_DOMAIN}
-    scope: RUN_TIME
-- name: intsvc0
-  environment_slug: go
-  github:
-    repo_clone_url: https://github.com/bojand/sample-golang-multi.git
-    branch: main
-  internal_ports:
-  - 3000
-  envs:
-  - key: TARGET_COMPONENT
-    value: "intsvc1"
-    scope: RUN_TIME
-  - key: COMPONENT_NAME
-    value: ${_self.PRIVATE_DOMAIN}
-    scope: RUN_TIME
-- name: intsvc1
-  environment_slug: go
-  github:
-    repo_clone_url: https://github.com/bojand/sample-golang-multi.git
-    branch: main
-  internal_ports:
-  - 3000
-  envs:
-  - key: COMPONENT_NAME
-    value: ${_self.PRIVATE_DOMAIN}
-    scope: RUN_TIME
+spec:
+  name: sample-golang-multi
+  services:
+  - name: edge
+    environment_slug: go
+    github:
+      repo_clone_url: https://github.com/bojand/sample-golang-multi.git
+      branch: main
+    envs:
+    - key: TARGET_COMPONENT
+      value: "intsvc0"
+      scope: RUN_TIME
+    - key: COMPONENT_NAME
+      value: ${_self.PRIVATE_DOMAIN}
+      scope: RUN_TIME
+  - name: intsvc0
+    environment_slug: go
+    github:
+      repo_clone_url: https://github.com/bojand/sample-golang-multi.git
+      branch: main
+    internal_ports:
+    - 3000
+    envs:
+    - key: TARGET_COMPONENT
+      value: "intsvc1"
+      scope: RUN_TIME
+    - key: COMPONENT_NAME
+      value: ${_self.PRIVATE_DOMAIN}
+      scope: RUN_TIME
+  - name: intsvc1
+    environment_slug: go
+    github:
+      repo_clone_url: https://github.com/bojand/sample-golang-multi.git
+      branch: main
+    internal_ports:
+    - 3000
+    envs:
+    - key: COMPONENT_NAME
+      value: ${_self.PRIVATE_DOMAIN}
+      scope: RUN_TIME
