@@ -4,7 +4,7 @@ services:
 - name: edge
   environment_slug: go
   github:
-    repo_clone_url: bojand/sample-golang-multi
+    repo_clone_url: https://github.com/bojand/sample-golang-multi.git
     branch: main
   envs:
   - key: TARGET_COMPONENT
@@ -16,7 +16,7 @@ services:
 - name: intsvc0
   environment_slug: go
   github:
-    repo_clone_url: bojand/sample-golang-multi
+    repo_clone_url: https://github.com/bojand/sample-golang-multi.git
     branch: main
   internal_ports:
   - 3000
@@ -30,7 +30,7 @@ services:
 - name: intsvc1
   environment_slug: go
   github:
-    repo_clone_url: bojand/sample-golang-multi
+    repo_clone_url: https://github.com/bojand/sample-golang-multi.git
     branch: main
   internal_ports:
   - 3000
