@@ -3,7 +3,7 @@ spec:
   services:
   - name: edge
     environment_slug: go
-    github:
+    git:
       repo_clone_url: https://github.com/bojand/sample-golang-multi.git
       branch: main
     envs:
@@ -15,7 +15,7 @@ spec:
       scope: RUN_TIME
   - name: intsvc0
     environment_slug: go
-    github:
+    git:
       repo_clone_url: https://github.com/bojand/sample-golang-multi.git
       branch: main
     internal_ports:
@@ -29,7 +29,7 @@ spec:
       scope: RUN_TIME
   - name: intsvc1
     environment_slug: go
-    github:
+    git:
       repo_clone_url: https://github.com/bojand/sample-golang-multi.git
       branch: main
     internal_ports:
