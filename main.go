@@ -19,7 +19,7 @@ func main() {
 	http.HandleFunc("/multi", func(w http.ResponseWriter, r *http.Request) {
 		targetText := ""
 
-		target := os.Getenv("COMPONENT_TARGET")
+		target := os.Getenv("TARGET_COMPONENT")
 
 		fmt.Println(target)
 
