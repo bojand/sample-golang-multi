@@ -1,11 +1,10 @@
-name: sample-golang-multi
-
+name: sample-golang-multi-image
 services:
 - name: edge
   environment_slug: go
   github:
     repo: bojand/sample-golang-multi
-    branch: main
+    branch: service_docker_image
   envs:
   - key: TARGET_COMPONENT
     value: "intsvc0:3000"
@@ -17,7 +16,7 @@ services:
   environment_slug: go
   github:
     repo: bojand/sample-golang-multi
-    branch: main
+    branch: service_docker_image
   internal_ports:
   - 3000
   envs:
