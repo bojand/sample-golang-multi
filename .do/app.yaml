@@ -8,7 +8,7 @@ services:
     branch: main
   envs:
   - key: TARGET_COMPONENT
-    value: "intsvc0"
+    value: "intsvc0:3000"
     scope: RUN_TIME
   - key: COMPONENT_NAME
     value: ${_self.PRIVATE_DOMAIN}
@@ -22,19 +22,15 @@ services:
   - 3000
   envs:
   - key: TARGET_COMPONENT
-    value: "intsvc1"
+    value: "intsvc1:5678"
     scope: RUN_TIME
   - key: COMPONENT_NAME
     value: ${_self.PRIVATE_DOMAIN}
     scope: RUN_TIME
 - name: intsvc1
-  environment_slug: go
-  github:
-    repo: bojand/sample-golang-multi
-    branch: main
+  image:
+    repository: hashicorp/http-echo
+    tag: 0.2.3
   internal_ports:
-  - 3000
-  envs:
-  - key: COMPONENT_NAME
-    value: ${_self.PRIVATE_DOMAIN}
-    scope: RUN_TIME
+  - 5678
+  run_command: "/http-echo -text='hello world'"
